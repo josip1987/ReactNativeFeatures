@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
   state = { albums: [] };
@@ -12,15 +13,16 @@ class AlbumList extends Component {
   }
 
   renderAlbums() {
-  	return this.state.albums.map(album => <Text>{album.title}</Text>);
+  	return this.state.albums.map(album => 
+      // better to use ID than title if possible, or uuid module
+      <AlbumDetail key={album.title} albumProp={album} /> // pass album as a prop to child, child receives a "props" object
+    );
   }
 
   render() {
     return (
         <View>
-        	<Text>
         		{this.renderAlbums()}
-        	</Text>
         </View>
     );
   }
