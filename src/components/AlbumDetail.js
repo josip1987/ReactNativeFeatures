@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import Card from './Card';
 
 const AlbumDetail = (props) => { // receive props object from parent
     return (
-      <View>
+      <Card>
           <Text>{props.albumProp.title}</Text>
-      </View>
+      </Card>
     );
 };
 
