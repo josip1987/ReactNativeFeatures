@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -11,7 +11,7 @@ const AlbumDetail = ({ albumProp }) => {
 								 // Card, CardSection...
 
 	// it's better to destructure
-	const { title, artist, thumbnail_image, image } = albumProp;
+	const { title, artist, thumbnail_image, image, url } = albumProp;
 	const { 
     thumbnailStyle, 
     headerContentStyle, 
@@ -42,7 +42,9 @@ const AlbumDetail = ({ albumProp }) => {
          </CardSection>
          
          <CardSection>
-            <Button onPress={() => alert(title)} />
+            <Button onPress={() => Linking.openURL(url)}>
+                Buy Now
+            </Button>         
          </CardSection>
       </Card>
     );        //pass onPress as a prop to Button

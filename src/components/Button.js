@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = ({ onPress }) => { //receive onPress in props obj. from parent
+const Button = ({ onPress, children }) => { //receive onPress in props obj.
 	const { buttonStyle, buttonTextStyle } = styles;
 	return (
 		<TouchableOpacity 
@@ -9,7 +9,7 @@ const Button = ({ onPress }) => { //receive onPress in props obj. from parent
 			style={buttonStyle}>
 
 			<Text style={buttonTextStyle}>
-				Click me!
+				{children}
 			</Text>
 		</TouchableOpacity>
 	);
