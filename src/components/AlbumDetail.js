@@ -42,10 +42,11 @@ const AlbumDetail = ({ albumProp }) => {
          </CardSection>
          
          <CardSection>
-            <Button />
+            <Button onPress={() => alert(title)} />
          </CardSection>
       </Card>
-    );
+    );        //pass onPress as a prop to Button
+              //can have any name ex. whenPressed...
 };
 
 const styles = {
